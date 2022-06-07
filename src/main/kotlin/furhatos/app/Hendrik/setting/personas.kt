@@ -24,12 +24,12 @@ fun FlowControlRunner.activate(persona: Persona) {
 }
 
 val furhatPersona = Persona(
-        name = "Furhat",
+        name = "Hendrik",
         face = listOf(
-                "Alex",
-                "default"), // Backup if Alex is not available
+                "Jamie",
+                "default"), // Backup if Jamie is not available
         voice = listOf(
-                PollyNeuralVoice.Matthew(),
-                PollyNeuralVoice.Joanna()
-        ).shuffled() // randomize what voice to select
+                PollyNeuralVoice.Brian()
+                //PollyNeuralVoice.Matthew()
+        )//.shuffled() randomize what voice to select
 )
