@@ -1,7 +1,7 @@
 package furhatos.app.myadvancedskill.flow
 
 import furhat.libraries.standard.AutomaticHeadMovements.RandomHeadMovements
-import furhatos.app.myadvancedskill.nlu.commandHandlers
+import furhatos.app.Hendrik.commandHandlers
 import furhatos.app.myadvancedskill.setting.*
 import furhatos.app.myadvancedskill.utils.*
 import furhatos.flow.kotlin.*

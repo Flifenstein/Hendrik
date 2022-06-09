@@ -52,7 +52,7 @@ val Init: State = state {
         furhat.setMicroexpression(DEFAULT_MICROEXPRESSIONS)
 
         /** Start parallel flow to manage the LED **/
-         parallel(abortOnExit = false) { goto(InteractionGlow) }
+        parallel(abortOnExit = false) { goto(InteractionGlow) }
 
         /** Start parallel flow to monitor the robot listening **/
         parallel(abortOnExit = false) { goto(ListenMonitor) }
