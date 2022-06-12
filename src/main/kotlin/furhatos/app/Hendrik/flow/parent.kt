@@ -13,8 +13,6 @@ val Parent: State = state {
     // Add global wizard buttons
     include(UniversalWizardButtons)
     // Add wizard buttons for easy testing
-    if (testMode!!)
-        include(TestButtons)
 }
 
 /** Additional more specific parents that can be used for enabling different modes. */

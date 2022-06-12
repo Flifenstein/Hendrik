@@ -1,5 +1,6 @@
 package furhatos.app.Hendrik.flow.formal
 
+import furhatos.app.myadvancedskill.flow.Active
 import furhatos.app.myadvancedskill.flow.mode
 import furhatos.flow.kotlin.*
 
@@ -8,7 +9,7 @@ import furhatos.flow.kotlin.*
  **/
 
 /** Ask about the gained knowledge persistent **/
-val KnowledgePersistentQuestion: State = state {
+val KnowledgePersistentQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -20,7 +21,7 @@ val KnowledgePersistentQuestion: State = state {
 }
 
 /** Ask about the study time **/
-val StudyTimeQuestion: State = state {
+val StudyTimeQuestion: State = state(Active){
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -32,7 +33,7 @@ val StudyTimeQuestion: State = state {
 }
 
 /** Ask about giving the course a mark **/
-val MarkQuestion: State = state {
+val MarkQuestion: State = state(Active){
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -44,7 +45,7 @@ val MarkQuestion: State = state {
 }
 
 /** Ask about the study material **/
-val StudyMaterialQuestion: State = state {
+val StudyMaterialQuestion: State = state(Active){
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (

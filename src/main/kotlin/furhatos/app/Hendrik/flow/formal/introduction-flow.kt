@@ -1,5 +1,6 @@
 package furhatos.app.Hendrik.flow.formal
 
+import furhatos.app.myadvancedskill.flow.Active
 import furhatos.app.myadvancedskill.flow.mode
 import furhatos.flow.kotlin.*
 
@@ -8,7 +9,7 @@ import furhatos.flow.kotlin.*
  **/
 
 /** The Furhat presents itself and the program **/
-val Presentation: State = state {
+val Presentation: State = state(Active){
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.say (
@@ -20,48 +21,39 @@ val Presentation: State = state {
 }
 
 /** Inform about the consent form **/
-val ConsentForm: State = state {
+val ConsentForm: State = state(Active){
     onEntry {
+        println("entering ${thisState.name} " + mode)
         furhat.say (
             "Inform consent."
         )
-
         goto(Privacy)
     }
 }
 
 /** Explain the privacy policy **/
-val Privacy: State = state {
+val Privacy: State = state(Active){
     onEntry {
+        println("entering ${thisState.name} " + mode)
         furhat.say (
             "Privacy policy."
         )
-
         goto(Confirmation)
     }
 }
 
 /** Ask for confirmation **/
-val Confirmation: State = state {
-    var consent: Boolean?
+val Confirmation: State = state(Active){
 
     onEntry {
-        consent = furhat.askYN (
-            "Yes or no. Do you confirm we can proceed?"
-        ) {
-            onNoResponse {
-                furhat.say("I'll wait until you are ready")
-            }
-        }
-
-        if (consent == true) {
-            furhat.say(
-                "Perfect. Let's start."
-            )
-
-            goto(OpeningQuestion)
+        val consent: Boolean? = furhat.askYN ("Yes or no. Do you confirm we can proceed?")
+        if(consent == true){
+                furhat.say("Let's start!")
+        goto(OpeningQuestion)
         } else {
-            goto(EndState)
+           /* goto(EndState) */
+           goto(OpeningQuestion)
+
         }
     }
 }
