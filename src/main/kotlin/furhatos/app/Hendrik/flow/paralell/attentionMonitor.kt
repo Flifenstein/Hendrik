@@ -41,9 +41,7 @@ val AttentionListener: State = state() {
         if (furhat.isAttended())
             raise("attentionCheck")
     }
-onEvent<MonitorAttend>{
-
-}
+    // onEvent<MonitorAttend>{}
     onEvent("attentionCheck", instant = true) {
         // Check the attention of all users attending to furhat
         for (user in users.usersAttendingFurhat) {
