@@ -11,9 +11,9 @@ import furhatos.flow.kotlin.*
  * State to monitor and set LED colour
  */
 val ListenMonitor: State = state {
-    onTime(repeat = 5000) { // repeat every 5 seconds
-        if (!furhat.isListening || !furhat.isSpeaking)
-            if (mode == Modes.ACTIVE)
+    /* This creates a problem because if the robot is neither speaking or listening at the exact time that the events triggers, the flow is broken
+     onTime(repeat = 5000) { // repeat every 5 seconds
+        if ((!furhat.isListening || !furhat.isSpeaking) && (mode == Modes.ACTIVE))
                 raise(unexpectedIdlingEvent())
-    }
+    } */
 }
