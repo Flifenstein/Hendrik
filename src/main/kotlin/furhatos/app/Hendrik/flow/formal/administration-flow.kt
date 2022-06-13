@@ -1,5 +1,6 @@
 package furhatos.app.Hendrik.flow.formal
 
+import furhatos.app.myadvancedskill.flow.Active
 import furhatos.app.myadvancedskill.flow.mode
 import furhatos.flow.kotlin.*
 
@@ -8,7 +9,7 @@ import furhatos.flow.kotlin.*
  **/
 
 /** Ask about the Master's programme **/
-val MasterProgramQuestion: State = state {
+val MasterProgramQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -21,7 +22,7 @@ val MasterProgramQuestion: State = state {
 }
 
 /** Ask at which university is the user enrolled **/
-val EnrolledUniversityQuestion: State = state {
+val EnrolledUniversityQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (

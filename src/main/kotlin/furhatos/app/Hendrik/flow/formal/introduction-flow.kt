@@ -9,7 +9,7 @@ import furhatos.flow.kotlin.*
  **/
 
 /** The Furhat presents itself and the program **/
-val Presentation: State = state(Active){
+val Presentation: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.say (
@@ -21,7 +21,7 @@ val Presentation: State = state(Active){
 }
 
 /** Inform about the consent form **/
-val ConsentForm: State = state(Active){
+val ConsentForm: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.say (
@@ -33,7 +33,7 @@ val ConsentForm: State = state(Active){
 }
 
 /** Explain the privacy policy **/
-val Privacy: State = state(Active){
+val Privacy: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.say (
@@ -45,7 +45,7 @@ val Privacy: State = state(Active){
 }
 
 /** Ask for confirmation **/
-val Confirmation: State = state(Active){
+val Confirmation: State = state(Active) {
     onEntry {
         val consent: Boolean? = furhat.askYN("Yes or no; do you confirm we can proceed?")
 

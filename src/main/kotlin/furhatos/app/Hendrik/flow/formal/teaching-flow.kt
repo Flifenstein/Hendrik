@@ -1,5 +1,6 @@
 package furhatos.app.Hendrik.flow.formal
 
+import furhatos.app.myadvancedskill.flow.Active
 import furhatos.app.myadvancedskill.flow.mode
 import furhatos.flow.kotlin.*
 
@@ -8,7 +9,7 @@ import furhatos.flow.kotlin.*
  **/
 
 /** Ask if the activities were challenging the user to study **/
-val ChallengingActivitiesQuestion: State = state {
+val ChallengingActivitiesQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -21,7 +22,7 @@ val ChallengingActivitiesQuestion: State = state {
 }
 
 /** Ask if the teaching staff encouraged you to think for yourself **/
-val ThinkForYourselfQuestion: State = state {
+val ThinkForYourselfQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -34,7 +35,7 @@ val ThinkForYourselfQuestion: State = state {
 }
 
 /** Ask about teacher's insight **/
-val TeacherInsightQuestion: State = state {
+val TeacherInsightQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -47,7 +48,7 @@ val TeacherInsightQuestion: State = state {
 }
 
 /** Ask about course feedback **/
-val CourseFeedbackQuestion: State = state {
+val CourseFeedbackQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (

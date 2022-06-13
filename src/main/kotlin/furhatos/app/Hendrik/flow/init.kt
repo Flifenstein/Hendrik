@@ -75,4 +75,3 @@ val Start: State = state {
         }
     }
 }
-

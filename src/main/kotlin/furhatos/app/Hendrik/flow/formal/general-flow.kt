@@ -22,7 +22,7 @@ val KnowledgePersistentQuestion: State = state(Active) {
 }
 
 /** Ask about the study time **/
-val StudyTimeQuestion: State = state(Active){
+val StudyTimeQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -35,7 +35,7 @@ val StudyTimeQuestion: State = state(Active){
 }
 
 /** Ask about giving the course a mark **/
-val MarkQuestion: State = state(Active){
+val MarkQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -48,7 +48,7 @@ val MarkQuestion: State = state(Active){
 }
 
 /** Ask about the study material **/
-val StudyMaterialQuestion: State = state(Active){
+val StudyMaterialQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (

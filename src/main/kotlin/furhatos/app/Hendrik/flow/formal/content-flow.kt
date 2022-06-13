@@ -1,5 +1,6 @@
 package furhatos.app.Hendrik.flow.formal
 
+import furhatos.app.myadvancedskill.flow.Active
 import furhatos.app.myadvancedskill.flow.mode
 import furhatos.flow.kotlin.*
 
@@ -8,7 +9,7 @@ import furhatos.flow.kotlin.*
  **/
 
 /** Ask about learning goals and assessment criteria **/
-val LearningGoalsQuestion: State = state {
+val LearningGoalsQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -21,7 +22,7 @@ val LearningGoalsQuestion: State = state {
 }
 
 /** Ask about the course topics **/
-val CourseTopicQuestion: State = state {
+val CourseTopicQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (

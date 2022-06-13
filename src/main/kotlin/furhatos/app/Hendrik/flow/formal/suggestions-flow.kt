@@ -1,5 +1,6 @@
 package furhatos.app.Hendrik.flow.formal
 
+import furhatos.app.myadvancedskill.flow.Active
 import furhatos.app.myadvancedskill.flow.mode
 import furhatos.flow.kotlin.*
 
@@ -8,7 +9,7 @@ import furhatos.flow.kotlin.*
  **/
 
 /** Ask about the strong point of the course **/
-val StrongPointsQuestion: State = state {
+val StrongPointsQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
@@ -21,7 +22,7 @@ val StrongPointsQuestion: State = state {
 }
 
 /** Ask if the user has any suggestion for the course improvement **/
-val SuggestionsQuestion: State = state {
+val SuggestionsQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
