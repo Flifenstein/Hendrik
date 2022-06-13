@@ -27,6 +27,7 @@ val ConsentForm: State = state(Active){
         furhat.say (
             "Inform consent."
         )
+
         goto(Privacy)
     }
 }
@@ -38,22 +39,21 @@ val Privacy: State = state(Active){
         furhat.say (
             "Privacy policy."
         )
+
         goto(Confirmation)
     }
 }
 
 /** Ask for confirmation **/
 val Confirmation: State = state(Active){
-
     onEntry {
-        val consent: Boolean? = furhat.askYN ("Yes or no. Do you confirm we can proceed?")
-        if(consent == true){
-                furhat.say("Let's start!")
-        goto(OpeningQuestion)
-        } else {
-           /* goto(EndState) */
-           goto(OpeningQuestion)
+        val consent: Boolean? = furhat.askYN("Yes or no; do you confirm we can proceed?")
 
+        if(consent == true){
+            furhat.say("Let's start!")
+            goto(OpeningQuestion)
+        } else {
+           goto(EndState)
         }
     }
 }

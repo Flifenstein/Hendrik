@@ -14,7 +14,8 @@ val MasterProgramQuestion: State = state {
         furhat.ask (
             "Which Master's programme do you follow?"
         )
-
+    }
+    onResponse {
         goto(EnrolledUniversityQuestion)
     }
 }
@@ -26,7 +27,8 @@ val EnrolledUniversityQuestion: State = state {
         furhat.ask (
             "At which university are you primary enrolled in (hoofdinschrijving)?"
         )
-
+    }
+    onResponse {
         goto(LearningGoalsQuestion)
     }
 }

@@ -14,7 +14,8 @@ val LearningGoalsQuestion: State = state {
         furhat.ask (
             "Were the learning goals and the related assessment criteria clear?"
         )
-
+    }
+    onResponse {
         goto(CourseTopicQuestion)
     }
 }
@@ -26,7 +27,8 @@ val CourseTopicQuestion: State = state {
         furhat.ask (
             "Were the course topics relevant for the educational programme?"
         )
-
+    }
+    onResponse {
         goto(ChallengingActivitiesQuestion)
     }
 }

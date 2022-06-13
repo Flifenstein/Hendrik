@@ -14,7 +14,8 @@ val ChallengingActivitiesQuestion: State = state {
         furhat.ask (
             "Did the teaching activities challenged you to study?"
         )
-
+    }
+    onResponse {
         goto(ThinkForYourselfQuestion)
     }
 }
@@ -26,7 +27,8 @@ val ThinkForYourselfQuestion: State = state {
         furhat.ask (
             "Did the teaching staff encourage you to think for yourself?"
         )
-
+    }
+    onResponse {
         goto(TeacherInsightQuestion)
     }
 }
@@ -38,7 +40,8 @@ val TeacherInsightQuestion: State = state {
         furhat.ask (
             "Did you feel that the teacher had a good insight in how the students were keeping up with the content matter and acted adequately when necessary?"
         )
-
+    }
+    onResponse {
         goto(CourseFeedbackQuestion)
     }
 }
@@ -50,7 +53,8 @@ val CourseFeedbackQuestion: State = state {
         furhat.ask (
             "Did the feedback during the course give you sufficient information for further learning?"
         )
-
+    }
+    onResponse {
         goto(KnowledgePersistentQuestion)
     }
 }

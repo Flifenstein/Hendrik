@@ -14,7 +14,8 @@ val StrongPointsQuestion: State = state {
         furhat.ask (
             "What are the strong points of this course?"
         )
-
+    }
+    onResponse {
         goto(SuggestionsQuestion)
     }
 }
@@ -26,7 +27,8 @@ val SuggestionsQuestion: State = state {
         furhat.ask (
             "Do you have any suggestions to improve this course, please elaborate?"
         )
-
+    }
+    onResponse {
         goto(AnswerRegistration)
     }
 }

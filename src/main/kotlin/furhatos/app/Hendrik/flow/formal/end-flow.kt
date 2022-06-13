@@ -10,12 +10,9 @@ import furhatos.gestures.Gestures
 
 /** Ask if the answers can be registered in the system **/
 val AnswerRegistration: State = state {
-    var registrationConsent: Boolean?
-
     onEntry {
         println("entering ${thisState.name} " + mode)
-        registrationConsent = furhat.askYN ("Your answers have been registered. Do you want to send them?") {
-
+        var registrationConsent: Boolean? = furhat.askYN("Your answers have been registered. Do you want to send them?") {
             onNoResponse {
                 furhat.say("I'll wait until you are ready")
             }
@@ -43,7 +40,7 @@ val EndState: State = state {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.say (
-            "The questionnaire is terminated."
+            "The questionnaire has finished."
         )
         terminate()
     }

@@ -14,7 +14,8 @@ val OpeningQuestion: State = state {
         furhat.ask (
             "What do you think about the course?"
         )
-
+    }
+    onResponse {// <intent_class> needs to be created
         goto(MasterProgramQuestion)
     }
 }
