@@ -1,5 +1,6 @@
 package furhatos.app.myadvancedskill.flow
 
+import furhatos.app.Hendrik.flow.formal.Presentation
 import furhatos.app.myadvancedskill.flow.main.WaitingForUser
 import furhatos.app.myadvancedskill.flow.paralell.InteractionGlow
 import furhatos.app.myadvancedskill.flow.paralell.ListenMonitor
@@ -63,12 +64,10 @@ val Init: State = state {
 }
 
 val Start: State = state {
-    init {
-        goto(WaitingForUser) // start interaction in Idle mode
-    }
     onEntry {
         println("entering ${thisState.name} " + mode)
-        goto(WaitingForUser)
+        goto(Presentation)
+        // goto(WaitingForUser)
     }
     onExit {
         if (furhat.isVirtual() && !testMode!! && !users.hasAny()) {
