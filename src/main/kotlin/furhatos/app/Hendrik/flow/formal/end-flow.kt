@@ -13,7 +13,7 @@ import furhatos.gestures.Gestures
 val AnswerRegistration: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
-        val registrationConsent: Boolean? = furhat.askYN("Your answers have been registered. Do you want to send them?") {
+        val registrationConsent: Boolean? = furhat.askYN("Your answers have been registered. Yes, or no; do you want to submit them?") {
             onNoResponse {
                 furhat.say("I'll wait until you are ready")
             }

@@ -26,7 +26,7 @@ val EnrolledUniversityQuestion: State = state(Active) {
     onEntry {
         println("entering ${thisState.name} " + mode)
         furhat.ask (
-            "At which university are you primary enrolled in (hoofdinschrijving)?"
+            "At which university are you primary enrolled in?"
         )
     }
     onResponse {
