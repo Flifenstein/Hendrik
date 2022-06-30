@@ -26,12 +26,13 @@ val Init: State = state {
         /** Set testMode for speedy testing */
         testMode = true
 
-        /** Set our main character - defined in personas */
+        /** Set our main character – defined in personas */
         activate(furhatPersona)
 
         /** define our default engagement parameters */
-        furhat.param.endSilTimeout = DEFAULT_END_SIL_TIMEOUT
-        furhat.param.noSpeechTimeout = DEFAULT_NO_SPEECH_TIMEOUT
+        furhat.param.endSilTimeout = 3500         // 3,5s of silence before the Furhat moves to the next question
+        furhat.param.noSpeechTimeout = 6000       // 6s of silence before the Furhat repeats the just asked question
+        furhat.param.maxSpeechTimeout = 59000     // 59s before the Furhat cuts the user's response and moves on
         users.attentionGainedThreshold = DEFAULT_ATTENTION_GAINED_THRESHOLD
         users.attentionLostThreshold = DEFAULT_ATTENTION_LOST_THRESHOLD
 
