@@ -6,7 +6,9 @@ import furhatos.flow.kotlin.*
 
 class MyAdvancedSkill : Skill() {
     override fun start() {
+        /** Uploading the dialogues online: Pietro **/
         dialogLogger.startSession(cloudToken = "5147314a-1145-4ae2-aaa3-77d0037ce141")
+
         Flow().run(Init)
     }
 }
